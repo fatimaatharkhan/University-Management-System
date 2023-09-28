@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Flex.Models.SemesterCourses>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().SemCourses.Course.courseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().SemCourses.Course.courseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().SemCourses.Course.creditHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().FacultSection.Instructor.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourses.FirstOrDefault().FacultSection.Instructor.LastName)
+            </th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @foreach (var item2 in item.SectionSemesterCourses)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.SemCourses.Course.courseCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.SemCourses.Course.courseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.SemCourses.Course.creditHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.Id)
+                        @Html.DisplayFor(modelItem => item2.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.FacultSection.Instructor.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.FacultSection.Instructor.LastName)
+                    </td>
+                    <td>
+                        @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div>
+    <input type='button' value='Home' id='HomeButton' onClick='redirectOnClick()' />
+    <script>
+        function redirectOnClick() {
+            document.location = '/Home/Faculty';
+        }
+    </script>
+</div>

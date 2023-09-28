@@ -1,0 +1,166 @@
+﻿@model Flex.Models.Userprofile
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/edit.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+<h1 class="display-5"><b>Details</b></h1>
+<hr style="border-top: 1px solid white;"> <hr />
+
+
+<div>
+    <h2><u>Profile</u></h2>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loginID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loginID)
+        </dd>*@
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.s_rollNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.s_rollNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.s_section)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.s_section)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.s_degree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.s_degree)
+        </dd>*@
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.s_batch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.s_batch)
+        </dd>
+*@        <dt class="col-sm-2">
+                <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+        <dd class="col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @if (Model.DOB.HasValue)
+            {
+                @Model.DOB.Value.ToString("MM-dd-yyyy")
+            }
+        </dd>
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.city)
+        </dd>
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.country)
+        </dd>
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.cnic)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.cnic)
+        </dd>
+        <dt class = "col-sm-2">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+        <dd class = "col-sm-10">
+                        <br> <!-- Add a line break here for spacing -->
+
+            @Html.DisplayFor(model => model.address)
+        </dd>
+    </dl>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-6">
+            <input type='button' value='Edit' class="btn btn-secondary btn-lg dis btn-block" id='EditButton' onClick='redirectOnClick1()' />
+            <script>
+                function redirectOnClick1() {
+                    document.location = '/Userprofiles/Edit/1';
+                }
+            </script>
+        </div>
+        <div class="col-md-6">
+            <input type='button' value='Home' class="btn btn-outline-dark btn-lg dis btn-block" id='HomeButton' onClick='redirectOnClick()' />
+            <script>
+                function redirectOnClick() {
+                    document.location = '/Home/Officer';
+                }
+            </script>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,76 @@
+﻿@model Flex.Models.FacultySectionSemesterCourses
+
+@{
+    ViewData["Title"] = "AssignSections";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/edit.css" asp-append-version="true" />
+    <style>
+        /* Custom styles */
+        .form-group {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+    <h1 class="display-5"><b>Assign Section</b></h1>
+    <hr style="border-top: 1px solid white;"> <hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SemesterCourseId" class="control-label" hidden ></label>
+                <select asp-for="SemesterCourseId" class="form-control" asp-items="ViewBag.SemesterCourseId" hidden></select>
+                <span asp-validation-for="SemesterCourseId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="loginID" class="control-label" hidden ></label>
+                <input asp-for="Instructor.Id" class="form-control" hidden/>
+                <span asp-validation-for="loginID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-xl-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="SectionId" class="control-label"></label>
+                    <select asp-for="SectionId"
+                            class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.ListOfSections,"Id", "Name"))"></select>
+                </div>
+            </div>
+
+            @*<div>
+            <a asp-action="AddCourse" asp-route-id="@Model.CourseId">Add Course</a>
+            </div>*@
+
+            <a id="AssignSection" href="#" class="btn btn-primary btn-lg" onclick='AssignSection();'>Assign Section</a>
+            <script>
+
+                function AssignSection() {
+                    var baseUrl = '@Url.Action("AssignSection", "FacultySectionSemesterCourses")';
+                    location.href = baseUrl + '/' + $('#SectionId').val() + '/' + $('#Id').val();
+                }
+
+            </script>
+
+            <div class="form-group">
+                <div class="row">
+                    @*<div class="col-md-6">
+                        <input type="submit" value="Go Back" class="btn btn-outline-dark btn-lg dis btn-block" />
+                    </div>*@
+                    <div class="col-md-6">
+                        <a asp-action="OfficerIndex" asp-controller="FacultySectionSemesterCourses" class="btn btn-secondary btn-lg dis btn-block">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

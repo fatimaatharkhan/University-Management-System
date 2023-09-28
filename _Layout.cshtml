@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>@ViewData["Title"] - Flex</title>
+      <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+      <link rel="stylesheet" href="~/css/Flex.styles.css" asp-append-version="true" />
+   </head>
+   <body>
+      <header>
+
+         <nav class="navbar navbar-light navbar-expand-sm" style="background-color: #1D2D44;">
+            <div class="container-fluid">
+               <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+               <img src="~/images/Flex-Login-3.png" width="40" height="30" alt="">
+            </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                  <ul class="navbar-nav flex-grow-1">
+                     <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                     </li>
+                  </ul>
+                  <partial name="_LoginPartial" />
+               </div>
+            </div>
+         </nav>
+</header>
+      <div class="container">
+         <main role="main" class="pb-3">
+            @RenderBody()
+         </main>
+      </div>
+      <div class="page-wrapper">
+         <!-- Footer -->
+         <footer class="page-footer font-small mdb-color lighten-3 pt-0" style="background-color: #1D2D44;">
+            <!-- Footer Elements -->
+            <div class="container">
+               <!--Grid row-->
+               <div class="row">
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-12 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/FAST_Peshawar_campus.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-6 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/finalb3.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-6 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/Image-37_-scaled.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-12 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/IMG_5750_1-min-760x400.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-6 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/58173_451356738273726_1362290649_n-1.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-2 col-md-6 mb-4" style="margin-top: 50px;">
+                     <!--Image-->
+                     <div class="view overlay z-depth-1-half">
+                        <img src="~/images/17_big.jpg" class="img-fluid"
+                           alt="">
+                        <a href="">
+                           <div class="mask rgba-white-light"></div>
+                        </a>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+               </div>
+               <!--Grid row--> 
+               <hr style="margin-top: 5px; margin-bottom: 5px;">
+               <hr style="border-top: 1px solid white;">
+            </div>
+            <!-- Footer Elements -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-2">© 2023 Copyright:
+               <a href="/"> www.flex.com</a>
+            </div>
+            <!-- Copyright -->
+         </footer>
+         <!-- Footer -->
+      </div>
+      <script src="~/lib/jquery/dist/jquery.min.js"></script>
+      <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="~/js/site.js" asp-append-version="true"></script>
+      @await RenderSectionAsync("Scripts", required: false)
+   </body>
+</html>

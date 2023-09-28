@@ -1,0 +1,58 @@
+﻿@model Flex.Models.StudentSectionSemesterCourses
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.StudentSectionAttendances.FirstOrDefault().sectionAttendance.sectionInfo.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentSectionAttendances.FirstOrDefault().sectionAttendance.sectionInfo.SemCourses.Course.courseName)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.StudentSectionAttendances.FirstOrDefault().sectionAttendance.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentSectionAttendances.FirstOrDefault().present)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.isApproved)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentSectionAttendances) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sectionAttendance.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.present)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.Course.creditHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.Course.PreReqs.courseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isApproved)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

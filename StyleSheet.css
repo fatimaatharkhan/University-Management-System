@@ -1,0 +1,57 @@
+﻿body, html {
+    height: 100%;
+    background-image: url('/images/background.png');
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%; /* Adjust the width as desired */
+    max-width: 600px; /* Optional: add a maximum width to limit the size */
+    padding: 20px; /* Adjust the padding as desired */
+    text-align: center;
+}
+
+    /* Additional styling */
+    .bg-text h1 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .bg-text p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .bg-text a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .bg-text a:hover {
+            text-decoration: underline;
+        }
+
+    /* Add emojis */
+    .bg-text .emoji {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }

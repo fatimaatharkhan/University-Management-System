@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Faculty Home Page";
+}
+
+
+    <link rel="stylesheet" href="~/css/homepages.css" asp-append-version="true" />
+    <div class="text-center">
+   <h3 class="welcome-back">Welcome back,</h3>
+
+    <h1 class="display-4">Faculty</h1>
+        <div class="button-container">
+    <input type='button' class="btn btn-outline-dark btn-lg" value='Select Courses' id='SelectCourseButton' onClick='redirectOnClick()' />
+    <script>
+        function redirectOnClick() {
+            document.location = '/FacultySectionSemesterCourses/Index';
+        }
+    </script>
+
+    <input type='button' class="btn btn-outline-dark btn-lg" value='View Students' id='ViewStudentsButton' onClick='redirectOnClick1()' />
+    <script>
+        function redirectOnClick1() {
+            document.location = '/FacultySectionSemesterCourses/ViewStudents';
+        }
+    </script>
+
+    <input type='button' class="btn btn-outline-dark btn-lg" value='Attendance' id='AttendanceButton' onClick='redirectOnClick2()' />
+    <script>
+        function redirectOnClick2() {
+            document.location = '/SectionAttendances/Index';
+        }
+    </script>
+          
+    <input type='button' class="btn btn-outline-dark btn-lg" value='Marks Distribution' id='MarksButton' onClick='redirectOnClick3()' />
+    <script>
+        function redirectOnClick3() {
+            document.location = '/FacultySectionSemesterCourses/SetWeightage';
+        }
+    </script>
+          
+    <input type='button' class="btn btn-outline-dark btn-lg" value='View Profile' id='ViewProfileButton' onClick='redirectOnClick4()' />
+    <script>
+        function redirectOnClick4() {
+            document.location = '/Userprofiles/Details/1';
+        }
+    </script>
+   
+    <input type='button' class="btn btn-outline-dark btn-lg" value='Edit Profile' id='EditProfileButton' onClick='redirectOnClick5()' />
+    <script>
+        function redirectOnClick5() {
+            document.location = '/Userprofiles/Edit';
+        }
+    </script>
+
+    </div>
+</div>

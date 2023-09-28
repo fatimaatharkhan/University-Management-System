@@ -1,0 +1,42 @@
+﻿.body {
+    background-color: #CAD2C5;
+}
+
+.display-4 {
+    font-size: 15px;
+    color: #333;
+    text-align: left;
+    margin-top: 0px; /* Adjust the value to reduce the top margin */
+    margin-bottom: 20px; /* Adjust the value to reduce the bottom margin */
+    font-family: "Gill Sans", sans-serif;
+}
+
+.display-5 {
+    font-size: 50px;
+    color: #333;
+    text-align: left;
+    margin-top: 30px; /* Adjust the value to reduce the top margin */
+    margin-bottom: 5px; /* Adjust the value to reduce the bottom margin */
+    font-family: "Gill Sans", sans-serif;
+}
+
+.dis {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.display-6 {
+    font-size: 60px;
+    color: #333;
+    text-align: left;
+    margin-top: 50px; /* Adjust the value to reduce the top margin */
+    font-family: "Gill Sans", sans-serif;
+}
+
+.display-3 {
+    font-size: 20px;
+    color: darkred;
+   margin-top: 70px; /* Adjust the value to reduce the top margin */
+    font-family: "Gill Sans", sans-serif;
+}

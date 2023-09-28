@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Officer Home Page";
+}
+<link rel="stylesheet" href="~/css/homepages.css" asp-append-version="true" />
+<div class="text-center">
+    <h3 class="welcome-back">Welcome back,</h3>
+    <h1 class="display-4">Officer</h1>
+    <div class="button-container">
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Add Course' id='AddCourseButton' onClick='redirectOnClick()' />
+        <script>
+            function redirectOnClick(){
+                document.location ='/Courses/Index';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='View Profile' id='ViewProfileButton' onClick='redirectOnClick2()' />
+        <script>
+            function redirectOnClick2(){
+                document.location ='/Userprofiles/Details/1';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Edit Profile' id='EditProfileButton' onClick='redirectOnClick1()' />
+        <script>
+            function redirectOnClick1(){
+                document.location ='/Userprofiles/Edit';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Add Semester' id='AddSemesterButton' onClick='redirectOnClick3()' />
+        <script>
+            function redirectOnClick3(){
+                document.location ='/Semesters/Index';
+            }
+        </script>
+    </div>
+
+    <div class="button-container">
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Approve Courses' id='ApproveCoursesButton' onClick='redirectOnClick4()' />
+        <script>
+            function redirectOnClick4() {
+                document.location = '/StudentSemesterCourses/OfficerIndex';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Assign Courses' id='AssignCoursesButton' onClick='redirectOnClick5()' />
+        <script>
+            function redirectOnClick5() {
+                document.location = '/FacultySectionSemesterCourses/OfficerIndex';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='View Sections' id='ViewButton' onClick='redirectOnClick6()' />
+        <script>
+            function redirectOnClick6() {
+                document.location = '/FacultySectionSemesterCourses/ViewStudentsOfficer';
+            }
+        </script>
+
+        <input type='button' class="btn btn-outline-dark btn-lg" value='Allocated Courses' id='AllocatedButton' onClick='redirectOnClick7()' />
+        <script>
+            function redirectOnClick7() {
+                document.location = '/FacultySectionSemesterCourses/ViewAllocatedCourses';
+            }
+        </script>
+    </div>
+</div>

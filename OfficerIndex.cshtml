@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Flex.Models.StudentSectionSemesterCourses>
+
+@{
+    ViewData["Title"] = "OFficerIndex";
+}
+
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+<h1 class="display-5">Semester Courses</h1>
+
+@*<p>
+    <a asp-action="Create" class="btn btn-outline-dark btn-lg dis">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.loginID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemCourses.semester.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemCourses.Course.courseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemCourses.Course.creditHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemCourses.Course.preReq_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Student.FirstName)
+                @Html.DisplayFor(modelItem => item.Student.LastName)*@
+                @Html.DisplayFor(modelItem => item.Student.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.semester.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.Course.courseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.Course.creditHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemCourses.Course.PreReqs.courseName)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> | 
+                @if (item.isApproved == true)
+                {
+                    @Html.Raw("Approved")
+                }
+                else
+                {
+                    <a asp-action="OfficerIndex2" asp-route-id="@item.Id">Approve</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

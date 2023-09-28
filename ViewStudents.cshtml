@@ -1,0 +1,102 @@
+﻿@model Flex.Models.FacultySectionSemesterCourses
+
+@{
+    ViewData["Title"] = "ViewStudents";
+}
+
+<h1>Edit</h1>
+
+<h4>FacultySectionSemesterCourses</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SemesterCourseId" class="control-label" hidden></label>
+                <select asp-for="SemesterCourseId" class="form-control" asp-items="ViewBag.SemesterCourseId" hidden></select>
+                <span asp-validation-for="SemesterCourseId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="loginID" class="control-label" hidden></label>
+                <input asp-for="Instructor.Id" class="form-control" hidden />
+                <span asp-validation-for="loginID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-xl-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="SectionId" class="control-label"></label>
+                    <select asp-for="SectionId"
+                            class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.ListOfSections,"Id", "Name"))"></select>
+                </div>
+            </div>
+
+            <a id="ViewStudents" href="#" class="btn btn-primary btn-sm" onclick='ViewStudents();'>View Students</a>
+            <script>
+
+                function ViewStudents() {
+                    //var baseUrl = '@Url.Action("ViewStudents1", "FacultySectionSemesterCourses")';
+                    //alert(baseUrl);
+                    //alert($('#SectionId').val());
+                    location.href = '/FacultySectionSemesterCourses/ViewStudents1/' + $('#SectionId').val();
+                }
+
+            </script>
+            
+        </form>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourse.StudentSectionSemesterCourses.FirstOrDefault().Student.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourse.StudentSectionSemesterCourses.FirstOrDefault().Student.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionSemesterCourse.StudentSectionSemesterCourses.FirstOrDefault().Student.LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model?.SectionSemesterCourse?.StudentSectionSemesterCourses)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Student.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Student.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Student.LastName)
+                    </td>
+                    <td>
+                        <a asp-action="EditMarks" asp-route-id="@item.Id">Upload Marks</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div>
+    <input type='button' value='Home' id='HomeButton' onClick='redirectOnClick()' />
+    <script>
+        function redirectOnClick() {
+            document.location = '/Home/Faculty';
+        }
+    </script>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

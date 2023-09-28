@@ -1,0 +1,132 @@
+﻿@model Flex.Models.Userprofile
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/edit.css" asp-append-version="true" />
+    <style>
+        /* Custom styles */
+        .form-group {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="display-5"><b>Edit</b></h1>
+    <hr style="border-top: 1px solid white;"> <hr />
+
+    <h2><u>Profile</u></h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" type="hidden" />
+
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="loginID" class="form-control" type="hidden" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="phoneNumber" class="control-label"></label>
+                    <input asp-for="phoneNumber" class="form-control" />
+                    <span asp-validation-for="phoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="s_rollNumber" type="hidden" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="s_section" type="hidden" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="s_degree" type="hidden" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="gender" class="control-label"></label>
+                    <input asp-for="gender" class="form-control" />
+                    <span asp-validation-for="gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="s_batch" type="hidden" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" type="date" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="city" class="control-label"></label>
+                    <input asp-for="city" class="form-control" />
+                    <span asp-validation-for="city" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="country" class="control-label"></label>
+                    <input asp-for="country" class="form-control" />
+                    <span asp-validation-for="country" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="cnic" class="control-label"></label>
+                    <input asp-for="cnic" class="form-control" />
+                    <span asp-validation-for="cnic" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="address" class="control-label"></label>
+                    <input asp-for="address" class="form-control" />
+                    <span asp-validation-for="address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <input type="submit" value="Save" class="btn btn-outline-primary btn-lg dis btn-block" /> |        </div>
+                        <div class="col-md-6">
+                    <input type='button' class="btn btn-secondary btn-lg dis btn-block" value='Home' id='HomeButton' onClick='redirectOnClick()' />
+                    <script>
+                        function redirectOnClick() {
+                            
+                            document.location = '/Home/Index';
+                        }
+                    </script>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

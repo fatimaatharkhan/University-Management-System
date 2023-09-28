@@ -1,0 +1,42 @@
+﻿@model Flex.Models.StudentSectionSemesterCourses
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+    <h4>StudentSectionSemesterCourses</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.assignments)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.assignments)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.quizzes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.quizzes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.midTerms)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.midTerms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.finals)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.finals)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Student Home Page";
+}
+
+
+
+    <link rel="stylesheet" href="~/css/homepages.css" asp-append-version="true" />
+    <div class="text-center">
+   <h3 class="welcome-back">Welcome back,</h3>
+
+    <h1 class="display-4">Student</h1>
+        <div class="button-container">
+
+    <input type='button' value='Courses' class="btn btn-outline-dark btn-lg" id='CoursesButtonStudent' onClick='redirectOnClick()' />
+    <script>
+        function redirectOnClick() {
+            document.location = '/StudentSemesterCourses/Index';
+        }
+    </script>
+
+    <input type='button' value='View Profile' class="btn btn-outline-dark btn-lg" id='ViewProfileButton' onClick='redirectOnClick2()' />
+    <script>
+        function redirectOnClick2() {
+            document.location = '/Userprofiles/StudentDetails/1';
+        }
+    </script>
+
+    <input type='button' value='Edit Profile' class="btn btn-outline-dark btn-lg" id='EditProfileButton' onClick='redirectOnClick1()' />
+    <script>
+        function redirectOnClick1() {
+            document.location = '/Userprofiles/StudentEdit';
+        }
+    </script>
+
+</div>
+</div>
